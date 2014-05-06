@@ -9,6 +9,7 @@
 define('_RC_START_TIME_', microtime(true));
 ini_set('default_charset', 'utf-8');
 ini_set('magic_quotes_runtime', 0);
+ini_set('upload_max_filesize', '100M');
 
 if (!headers_sent())
 	header('Content-Type: text/html; charset=utf-8');
