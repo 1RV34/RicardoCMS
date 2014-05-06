@@ -12,3 +12,4 @@ define('_RC_SYSTEM_DIR_', _RC_ROOT_DIR_.'/system');
 
 /* System */
 define('_RC_SYSTEM_CONFIG_DIR_', _RC_SYSTEM_DIR_.'/config');
+define('_RC_SYSTEM_CLASS_DIR_', _RC_SYSTEM_DIR_.'/classes');

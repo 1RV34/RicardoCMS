@@ -14,5 +14,4 @@ if (!headers_sent())
 	header('Content-Type: text/html; charset=utf-8');
 
 require_once dirname(__FILE__).'/config/config.inc.php';
-
-echo 'Hello World!';
+require_once _RC_SYSTEM_DIR_.'/autoloader.php';
