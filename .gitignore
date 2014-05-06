@@ -215,3 +215,5 @@ pip-log.txt
 .mr.developer.cfg
 system/config/settings.inc.php
 system/config/system.php
+system/smarty/cache/*
+system/smarty/templates_c/*

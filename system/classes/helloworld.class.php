@@ -9,7 +9,8 @@ class HelloWorld
 {
 	public function __construct()
 	{
+		$smarty = new Smarty_RicardoCMS;
 		p('Debugging is enabled.');
-		echo 'Hello World!';
+		$smarty->display('content/hello-world.tpl');
 	}
 }
