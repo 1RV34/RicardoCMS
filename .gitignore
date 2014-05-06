@@ -213,6 +213,8 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+# RicardoCMS
 system/config/settings.inc.php
 system/config/system.php
 system/smarty/cache/*
