@@ -19,3 +19,5 @@ if (!file_exists($settingsFileName))
 
 	exit;
 }
+
+require_once dirname(__FILE__).'/defines.inc.php';
