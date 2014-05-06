@@ -9,6 +9,7 @@ class HelloWorld
 {
 	public function __construct()
 	{
+		p('Debugging is enabled.');
 		echo 'Hello World!';
 	}
 }
