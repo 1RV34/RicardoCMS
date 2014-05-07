@@ -6,8 +6,14 @@
  * @version 0.1.0
  */
 
+/* Web */
+define('_CSS_DIR_', __RC_BASE_URI__.'css/');
+define('_JS_DIR_', __RC_BASE_URI__.'js/');
+
 /* Local */
 define('_RC_ROOT_DIR_', realpath(dirname(__FILE__).'/../..'));
+define('_RC_CSS_DIR_', _RC_ROOT_DIR_.'/css');
+define('_RC_JS_DIR_', _RC_ROOT_DIR_.'/js');
 define('_RC_SYSTEM_DIR_', _RC_ROOT_DIR_.'/system');
 
 /* - System */
