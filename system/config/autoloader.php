@@ -9,5 +9,6 @@ $autoloaderConfig = new stdClass;
 $autoloaderConfig->default = 'class';
 $autoloaderConfig->directories = array(
 	'class' => _RC_SYSTEM_CLASS_DIR_,
+	'interface' => _RC_SYSTEM_INTERFACE_DIR_,
 );
 return $autoloaderConfig;
