@@ -219,3 +219,5 @@ system/config/settings.inc.php
 system/config/system.php
 system/smarty/cache/*
 system/smarty/templates_c/*
+css/everything-*.css
+js/everything-*.js
