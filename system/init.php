@@ -36,6 +36,8 @@ $config->dev[] = $_SERVER['SERVER_ADDR'];
 /* Developer check */
 define('_RC_DEV_', in_array($_SERVER['REMOTE_ADDR'], $config->dev));
 define('_RC_DEBUG_', _RC_DEV_ && isset($_REQUEST['debug']));
+error_reporting(E_ALL);
+ini_set('display_errors', _RC_DEBUG_);
 
 /* Load config */
 require_once dirname(__FILE__).'/config/config.inc.php';
