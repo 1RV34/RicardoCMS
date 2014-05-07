@@ -9,8 +9,14 @@ class HelloWorld
 {
 	public function __construct()
 	{
-		$smarty = new Smarty_RicardoCMS;
+		$css = new CSS;
+		$css->add('system/lib/normalize.css');
+		$css->printOut();
+		$javaScript = new JavaScript;
+		$javaScript->add('system/lib/jquery.min.js');
+		$javaScript->printOut();
 		p('Debugging is enabled.');
+		$smarty = new Smarty_RicardoCMS;
 		$smarty->display('content/hello-world.tpl');
 	}
 }
