@@ -14,7 +14,13 @@ ini_set('upload_max_filesize', '100M');
 if (!headers_sent())
 	header('Content-Type: text/html; charset=utf-8');
 
-$config = require dirname(__FILE__).'/config/system.php';
+/* Copy default sample system config if none is available */
+$systemConfigFile = dirname(__FILE__).'/config/system.php';
+
+if (!file_exists($systemConfigFile))
+	copy(dirname(__FILE__).'/config/system.sample.php', $systemConfigFile);
+
+$config = require $systemConfigFile;
 
 if (!is_array($config->dev))
 	$config->dev = array($config->dev);

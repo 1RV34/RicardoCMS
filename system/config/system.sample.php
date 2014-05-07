@@ -6,9 +6,5 @@
  */
 
 $systemConfig = new stdClass;
-$systemConfig->dev = array(
-	'111.111.111.111',
-	'222.222.222.222',
-	'333.333.333.333',
-); // May also be a single string
+$systemConfig->dev = ''; // The IP address of the developer, may also be an array of IP addresses
 return $systemConfig;
