@@ -11,12 +11,15 @@ class HelloWorld
 	{
 		$css = new CSS;
 		$css->add('system/lib/normalize.css');
-		$css->printOut();
 		$javaScript = new JavaScript;
 		$javaScript->add('system/lib/jquery.min.js');
-		$javaScript->printOut();
-		p('Debugging is enabled.');
 		$smarty = new Smarty_RicardoCMS;
+		$smarty->assign('title', 'Hello World!');
+		$smarty->assign('cssjs', trim($css->getOut().$javaScript->getOut()));
+		$smarty->assign('_website_name', 'RicardoCMS');
+		$smarty->display('header.tpl');
+		p('Debugging is enabled.');
 		$smarty->display('content/hello-world.tpl');
+		$smarty->display('footer.tpl');
 	}
 }
