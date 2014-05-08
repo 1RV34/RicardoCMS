@@ -57,11 +57,6 @@ abstract class CCCResource implements CCCResource_Interface
 		return $output;
 	}
 
-	public function printOut()
-	{
-		echo $this->getOut();
-	}
-
 	private static function isLocal($resource)
 	{
 		return strpos($resource, '://') === false && substr($resource, 0, 2) != '//';
