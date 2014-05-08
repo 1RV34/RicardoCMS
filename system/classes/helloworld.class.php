@@ -11,6 +11,7 @@ class HelloWorld
 	{
 		$css = new CSS;
 		$css->add('system/lib/normalize.css');
+		// $css->add('system/global.css');
 		$javaScript = new JavaScript;
 		$javaScript->add('system/lib/jquery.min.js');
 		$smarty = new Smarty_RicardoCMS;
