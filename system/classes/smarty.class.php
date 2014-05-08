@@ -17,5 +17,6 @@ class Smarty_RicardoCMS extends Smarty
 		$this->setCompileDir($config->compileDir);
 		$this->setConfigDir($config->configDir);
 		$this->setTemplateDir($config->templateDir);
+		$smarty->assign('_website_name', 'RicardoCMS');
 	}
 }
