@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>{$title}</title>
+		<script type="text/javascript">
+			var ricardoCMSData={$javaScriptData};
+		</script>
 {$cssJs}
 	</head>
 	<body>

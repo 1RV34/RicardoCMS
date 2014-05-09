@@ -15,7 +15,9 @@ class HelloWorld
 		$javaScript = new JavaScript;
 		$javaScript->add('system/lib/jquery.min.js');
 		$smarty = new Smarty_RicardoCMS;
-		$smarty->assign('title', 'Hello World! - RicardoCMS');
+		$title = array('RicardoCMS', 'Hello World!');
+		$smarty->assign('title', implode(' - ', array_reverse($title)));
+		$smarty->assign('javaScriptData', json_encode(array('title' => $title)));
 		$smarty->assign('cssJs', trim($css->getOut().$javaScript->getOut()));
 		$smarty->assign('pageName', 'Hello World!');
 		$smarty->display('header.tpl');
