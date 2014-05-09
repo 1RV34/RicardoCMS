@@ -16,10 +16,13 @@ class HelloWorld
 		$javaScript->add('system/lib/jquery.min.js');
 		$smarty = new Smarty_RicardoCMS;
 		$title = array('RicardoCMS', 'Hello World!');
-		$smarty->assign('title', implode(' - ', array_reverse($title)));
-		$smarty->assign('javaScriptData', json_encode(array('title' => $title)));
-		$smarty->assign('cssJs', trim($css->getOut().$javaScript->getOut()));
-		$smarty->assign('pageName', 'Hello World!');
+		$vars = array(
+			'title' => implode(' - ', array_reverse($title)),
+			'javaScriptData' => json_encode(array('title' => $title)),
+			'cssJs' => trim($css->getOut().$javaScript->getOut()),
+			'pageName' => 'Hello World!',
+		);
+		$smarty->assign($vars);
 		$smarty->display('header.tpl');
 		p('Debugging is enabled.');
 		$smarty->display('content/hello-world.tpl');
