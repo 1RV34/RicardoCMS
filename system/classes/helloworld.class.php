@@ -15,8 +15,9 @@ class HelloWorld
 		$javaScript = new JavaScript;
 		$javaScript->add('system/lib/jquery.min.js');
 		$smarty = new Smarty_RicardoCMS;
-		$smarty->assign('title', 'Hello World!');
+		$smarty->assign('title', 'Hello World! - RicardoCMS');
 		$smarty->assign('cssJs', trim($css->getOut().$javaScript->getOut()));
+		$smarty->assign('pageName', 'Hello World!');
 		$smarty->display('header.tpl');
 		p('Debugging is enabled.');
 		$smarty->display('content/hello-world.tpl');

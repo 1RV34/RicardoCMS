@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>{if $title}{$title} - {/if}{$_websiteName}</title>
+		<title>{$title}</title>
 {$cssJs}
 	</head>
 	<body>
@@ -15,6 +15,6 @@
 		</div>
 		<div class="wrapper">
 			<div class="content">
-{if $title}
-				<h2>{$title}</h2>
+{if $pageName}
+				<h2>{$pageName}</h2>
 {/if}
