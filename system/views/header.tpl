@@ -2,14 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>{if $title}{$title} - {/if}{$_website_name}</title>
+		<title>{if $title}{$title} - {/if}{$_websiteName}</title>
 {$cssjs}
 	</head>
 	<body>
 		<div class="header">
 			<div class="header-wrapper">
 				<div class="header-content">
-					<a href="{$_base_uri}"><h1>{$_website_name}</h1></a>
+					<a href="{$_baseUri}"><h1>{$_websiteName}</h1></a>
 				</div>
 			</div>
 		</div>
