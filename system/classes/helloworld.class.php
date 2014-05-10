@@ -14,6 +14,7 @@ class HelloWorld
 		$css->add('system/global.css');
 		$javaScript = new JavaScript;
 		$javaScript->add('system/lib/jquery.min.js');
+		$javaScript->add('system/ricardocms.js');
 		$smarty = new Smarty_RicardoCMS;
 		$title = array('RicardoCMS', 'Hello World!');
 		$vars = array(
