@@ -6,6 +6,7 @@
  * @version 0.1.0
  */
 
+require_once dirname(__FILE__).'/classes/finder.php';
 spl_autoload_register('rcAutoloader');
 
 function rcAutoloader($className)
@@ -34,9 +35,7 @@ function rcAutoloader($className)
 
 			foreach ($config->directories[$type] as $directory)
 			{
-				$fileName = $directory.'/'.strtolower($className).'.php';
-
-				if (file_exists($fileName))
+				if ($fileName = Finder::getInstance()->find($directory, strtolower($className).'.php'))
 				{
 					require_once $fileName;
 					return;
@@ -50,9 +49,7 @@ function rcAutoloader($className)
 
 	foreach ($config->directories[$config->default] as $directory)
 	{
-		$fileName = $directory.'/'.strtolower($className).'.php';
-
-		if (file_exists($fileName))
+		if ($fileName = Finder::getInstance()->find($directory, strtolower($className).'.php'))
 		{
 			require_once $fileName;
 			return;
