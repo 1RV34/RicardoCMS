@@ -34,7 +34,7 @@ function rcAutoloader($className)
 
 			foreach ($config->directories[$type] as $directory)
 			{
-				$fileName = $directory.'/'.strtolower($className).'.'.$type.'.php';
+				$fileName = $directory.'/'.strtolower($className).'.php';
 
 				if (file_exists($fileName))
 				{
@@ -50,7 +50,7 @@ function rcAutoloader($className)
 
 	foreach ($config->directories[$config->default] as $directory)
 	{
-		$fileName = $directory.'/'.strtolower($className).'.'.$config->default.'.php';
+		$fileName = $directory.'/'.strtolower($className).'.php';
 
 		if (file_exists($fileName))
 		{
