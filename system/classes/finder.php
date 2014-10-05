@@ -18,7 +18,14 @@ class Finder
 				_RC_SYSTEM_DIR_,
 				_RC_APPLICATION_DIR_,
 			);
-			self::$_instance = new self($dirs);
+			$finder = new self($dirs);
+			$configFile = $finder->find('config', 'finder.php');
+
+			if (!$configFile)
+				die('Missing finder config.');
+
+			$config = require $configFile;
+			self::$_instance = new self($config->dirs);
 		}
 
 		return self::$_instance;
