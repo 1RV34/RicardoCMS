@@ -5,6 +5,8 @@
  * @version 0.1.0
  */
 
+require_once dirname(__FILE__).'/finder.php';
+
 class Autoload_RicardoCMS
 {
 	private static $_instance;
