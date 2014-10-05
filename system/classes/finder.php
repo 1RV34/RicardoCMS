@@ -15,8 +15,8 @@ class Finder
 		if (!self::$_instance)
 		{
 			$dirs = array(
-				_RC_APPLICATION_DIR_,
 				_RC_SYSTEM_DIR_,
+				_RC_APPLICATION_DIR_,
 			);
 			self::$_instance = new self($dirs);
 		}
@@ -33,7 +33,7 @@ class Finder
 	{
 		$path = $dir.'/'.$file;
 
-		foreach ($this->dirs as $searchDir)
+		foreach (array_reverse($this->dirs) as $searchDir)
 		{
 			$searchPath = $searchDir.'/'.$path;
 
