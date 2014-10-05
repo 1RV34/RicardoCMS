@@ -33,47 +33,27 @@ class Autoload_RicardoCMS
 
 	public function load($className)
 	{
-		if (class_exists($className, false))
-			return;
+		$dir = 'classes';
+		$file = implode('/', array_reverse(explode('_', strtolower($className)))).'.php';
 
-		if (($pos = strpos($className, '_')) !== false)
+		if (substr($file, 0, 11) == 'ricardocms/')
+			$file = substr($file, 11);
+
+		if (substr($file, 0, 10) == 'interface/')
 		{
-			$type =      strtolower(substr($className, $pos + 1));
-
-			if ($type == 'interface') // Special
-			{
-				if (interface_exists($className, false))
-					return;
-			}
-
-			$className = substr($className, 0, $pos);
-
-			if (array_key_exists($type, $this->directories))
-			{
-				if (!is_array($this->directories[$type]))
-					$this->directories[$type] = array($this->directories[$type]);
-
-				foreach ($this->directories[$type] as $directory)
-				{
-					if ($fileName = Finder::getInstance()->find($directory, strtolower($className).'.php'))
-					{
-						require_once $fileName;
-						return;
-					}
-				}
-			}
-		}
-
-		if (!is_array($this->directories[$this->default]))
-			$this->directories[$this->default] = array($this->directories[$this->default]);
-
-		foreach ($this->directories[$this->default] as $directory)
-		{
-			if ($fileName = Finder::getInstance()->find($directory, strtolower($className).'.php'))
-			{
-				require_once $fileName;
+			if (interface_exists($className, false))
 				return;
-			}
+
+			$dir = 'interfaces';
+			$file = substr($file, 10);
 		}
+		else
+		{
+			if (class_exists($className, false))
+				return;
+		}
+
+		if ($fileName = Finder::getInstance()->find($dir, $file))
+			require_once $fileName;
 	}
 }
