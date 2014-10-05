@@ -17,7 +17,7 @@ class Autoload_RicardoCMS
 	{
 		if (!self::$_instance)
 		{
-			$configFile = Finder::getInstance()->find('config', 'autoload.php');
+			$configFile = Finder::getInstance()->find('config', 'autoload');
 
 			if (!$configFile)
 				die('Missing autoload config.');
@@ -38,7 +38,7 @@ class Autoload_RicardoCMS
 	public function load($className)
 	{
 		$dir = 'classes';
-		$file = implode('/', array_reverse(explode('_', strtolower($className)))).'.php';
+		$file = implode('/', array_reverse(explode('_', strtolower($className))));
 
 		if (substr($file, 0, 11) == 'ricardocms/')
 			$file = substr($file, 11);

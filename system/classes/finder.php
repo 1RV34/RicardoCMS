@@ -9,6 +9,8 @@ class Finder
 {
 	private static $_instance;
 	private $dirs;
+	private $defaultExt;
+	private $exts;
 
 	public static function getInstance()
 	{
@@ -18,27 +20,34 @@ class Finder
 				_RC_SYSTEM_DIR_,
 				_RC_APPLICATION_DIR_,
 			);
-			$finder = new self($dirs);
-			$configFile = $finder->find('config', 'finder.php');
+			$finder = new self($dirs, 'php');
+			$configFile = $finder->find('config', 'finder');
 
 			if (!$configFile)
 				die('Missing finder config.');
 
 			$config = require $configFile;
-			self::$_instance = new self($config->dirs);
+			self::$_instance = new self($config->dirs, $config->defaultExt, $config->exts);
 		}
 
 		return self::$_instance;
 	}
 
-	public function __construct($dirs)
+	public function __construct($dirs, $defaultExt, $exts = array())
 	{
 		$this->dirs = $dirs;
+		$this->defaultExt = $defaultExt;
+		$this->exts = $exts;
 	}
 
 	public function find($dir, $file)
 	{
-		$path = $dir.'/'.$file;
+		$ext = $this->defaultExt;
+
+		if (array_key_exists($dir, $this->exts))
+			$ext = $this->exts[$dir];
+
+		$path = $dir.'/'.$file.'.'.$ext;
 
 		foreach (array_reverse($this->dirs) as $searchDir)
 		{
