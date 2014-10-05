@@ -24,7 +24,7 @@ class Finder
 			$configFile = $finder->find('config', 'finder');
 
 			if (!$configFile)
-				die('Missing finder config.');
+				die('Error: "finder" config file is missing.');
 
 			$config = require $configFile;
 			self::$_instance = new self($config->dirs, $config->defaultExt, $config->exts);
