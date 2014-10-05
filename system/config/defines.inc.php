@@ -17,7 +17,6 @@ define('_RC_JS_DIR_', _RC_ROOT_DIR_.'/js');
 define('_RC_SYSTEM_DIR_', _RC_ROOT_DIR_.'/system');
 
 /* - System */
-define('_RC_SYSTEM_CONFIG_DIR_', _RC_SYSTEM_DIR_.'/config');
 define('_RC_SYSTEM_LIB_DIR_', _RC_SYSTEM_DIR_.'/libs');
 define('_RC_SYSTEM_SMARTY_DIR_', _RC_SYSTEM_DIR_.'/smarty');
 define('_RC_SYSTEM_VIEW_DIR_', _RC_SYSTEM_DIR_.'/views');

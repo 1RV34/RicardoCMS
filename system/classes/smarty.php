@@ -11,7 +11,12 @@ class Smarty_RicardoCMS extends Smarty
 {
 	public function __construct()
 	{
-		$config = require _RC_SYSTEM_CONFIG_DIR_.'/smarty.php';
+		$configFile = Finder::getInstance()->find('config', 'smarty');
+
+		if (!$configFile)
+			die('Error: "finder" smarty file is missing.');
+
+		$config = require $configFile;
 		parent::__construct();
 		$this->setCacheDir($config->cacheDir);
 		$this->setCompileDir($config->compileDir);
