@@ -17,7 +17,7 @@ class Autoload_RicardoCMS
 	{
 		if (!self::$_instance)
 		{
-			$configFile = Finder::getInstance()->find('config', 'autoloader.php');
+			$configFile = Finder::getInstance()->find('config', 'autoload.php');
 			$config = require $configFile;
 			self::$_instance = new self($config->default, $config->directories);
 		}
