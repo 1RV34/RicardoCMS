@@ -14,7 +14,7 @@ class Smarty_RicardoCMS extends Smarty
 		$configFile = Finder::getInstance()->find('config', 'smarty');
 
 		if (!$configFile)
-			die('Error: "finder" smarty file is missing.');
+			die('Error: "smarty" config file is missing.');
 
 		$config = require $configFile;
 		parent::__construct();
