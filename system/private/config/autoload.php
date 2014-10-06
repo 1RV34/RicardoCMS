@@ -6,9 +6,4 @@
  */
 
 $autoloaderConfig = new stdClass;
-$autoloaderConfig->default = 'class';
-$autoloaderConfig->directories = array(
-	'class' => 'classes',
-	'interface' => 'interfaces',
-);
 return $autoloaderConfig;

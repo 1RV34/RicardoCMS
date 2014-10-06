@@ -12,8 +12,6 @@ $finderConfig->dirs = array(
 );
 $finderConfig->defaultExt = 'php';
 $finderConfig->exts = array(
-	'views' => 'tpl',
-	'css' => 'css',
-	'js' => 'js',
+	'private/views' => 'tpl',
 );
 return $finderConfig;

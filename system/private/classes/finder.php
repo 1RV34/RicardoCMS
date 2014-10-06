@@ -21,7 +21,7 @@ class Finder
 				_RC_APPLICATION_DIR_,
 			);
 			$finder = new self($dirs, 'php');
-			$configFile = $finder->find('config', 'finder');
+			$configFile = $finder->find('private/config', 'finder');
 
 			if (!$configFile)
 				die('Error: "finder" config file is missing.');

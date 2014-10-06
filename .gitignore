@@ -215,9 +215,9 @@ pip-log.txt
 .mr.developer.cfg
 
 # RicardoCMS
-system/config/settings.inc.php
-system/config/system.php
-system/smarty/cache/*
-system/smarty/templates_c/*
+system/private/config/settings.inc.php
+system/private/config/system.php
+system/private/smarty/cache/*
+system/private/smarty/templates_c/*
 css/everything-*.css
 js/everything-*.js

@@ -5,7 +5,7 @@
  * @version 0.1.0
  */
 
-require_once _RC_SYSTEM_LIB_DIR_.'/jsmin/jsmin.php';
+require_once _RC_SYSTEM_PRIVATE_LIB_DIR_.'/jsmin/jsmin.php';
 
 class JavaScript extends CCCResource
 {

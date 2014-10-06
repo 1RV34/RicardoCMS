@@ -19,10 +19,10 @@ if (!headers_sent())
 	header('Content-Type: text/html; charset=utf-8');
 
 /* Copy default sample system config if none is available */
-$systemConfigFile = dirname(__FILE__).'/config/system.php';
+$systemConfigFile = dirname(__FILE__).'/private/config/system.php';
 
 if (!file_exists($systemConfigFile))
-	copy(dirname(__FILE__).'/config/system.sample.php', $systemConfigFile);
+	copy(dirname(__FILE__).'/private/config/system.sample.php', $systemConfigFile);
 
 /* Load system config */
 $config = require $systemConfigFile;
@@ -40,10 +40,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', _RC_DEBUG_);
 
 /* Load config */
-require_once dirname(__FILE__).'/config/config.inc.php';
+require_once dirname(__FILE__).'/private/config/config.inc.php';
 
 /* Load autoloader */
-require_once _RC_SYSTEM_DIR_.'/autoloader.php';
+require_once _RC_SYSTEM_PRIVATE_DIR_.'/autoloader.php';
 
 /* Set debugging */
 Debug::enable(_RC_DEBUG_);

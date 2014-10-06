@@ -17,27 +17,24 @@ class Autoload_RicardoCMS
 	{
 		if (!self::$_instance)
 		{
-			$configFile = Finder::getInstance()->find('config', 'autoload');
+			$configFile = Finder::getInstance()->find('private/config', 'autoload');
 
 			if (!$configFile)
 				die('Error: "autoload" config file is missing.');
 
 			$config = require $configFile;
-			self::$_instance = new self($config->default, $config->directories);
+			self::$_instance = new self;
 		}
 
 		return self::$_instance;
 	}
 
-	public function __construct($default, $directories)
-	{
-		$this->default = $default;
-		$this->directories = $directories;
-	}
+	public function __construct()
+	{}
 
 	public function load($className)
 	{
-		$dir = 'classes';
+		$dir = 'private/classes';
 		$file = implode('/', array_reverse(explode('_', strtolower($className))));
 
 		if (substr($file, 0, 11) == 'ricardocms/')
@@ -48,7 +45,7 @@ class Autoload_RicardoCMS
 			if (interface_exists($className, false))
 				return;
 
-			$dir = 'interfaces';
+			$dir = 'private/interfaces';
 			$file = substr($file, 10);
 		}
 		else

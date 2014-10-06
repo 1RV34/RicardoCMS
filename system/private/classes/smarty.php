@@ -5,13 +5,13 @@
  * @version 0.1.0
  */
 
-require_once _RC_SYSTEM_LIB_DIR_.'/smarty/Smarty.class.php';
+require_once _RC_SYSTEM_PRIVATE_LIB_DIR_.'/smarty/Smarty.class.php';
 
 class Smarty_RicardoCMS extends Smarty
 {
 	public function __construct()
 	{
-		$configFile = Finder::getInstance()->find('config', 'smarty');
+		$configFile = Finder::getInstance()->find('private/config', 'smarty');
 
 		if (!$configFile)
 			die('Error: "smarty" config file is missing.');
