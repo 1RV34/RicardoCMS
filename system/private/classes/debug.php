@@ -193,12 +193,12 @@ class Debug
 		if (!$title)
 			return;
 
-		return '<p>'.htmlentities($title).'</p>';
+		return '<p>'.htmlentities($title, false, 'UTF-8').'</p>';
 	}
 
 	private static function wrap($output, $inlineStyles = false)
 	{
-		return self::openWrap($inlineStyles).htmlentities($output).self::closeWrap();
+		return self::openWrap($inlineStyles).htmlentities($output, false, 'UTF-8').self::closeWrap();
 	}
 
 	private static function openWrap($inlineStyles = false)
