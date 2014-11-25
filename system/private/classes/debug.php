@@ -14,7 +14,7 @@ if (!function_exists('d'))
 	 *
 	 * @uses Debug::dieObject()
 	 */
-	function d($object, $title = '')
+	function d($object = '', $title = '')
 	{
 		return Debug::dieObject($object, $title);
 	}
@@ -117,12 +117,13 @@ class Debug
 	 *
 	 * @return mixed {@uses $object}
 	 */
-	public static function dieObject($object, $title = '', $exit = true)
+	public static function dieObject($object = '', $title = '', $exit = true)
 	{
 		if (!self::isEnabled())
 			return $object;
 
-		echo self::getStyle().self::title($title).self::wrap(print_r($object, true));
+		if ($object)
+			echo self::getStyle().self::title($title).self::wrap(print_r($object, true));
 
 		if ($exit)
 			exit;
